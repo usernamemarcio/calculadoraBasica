@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Calculadora</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+            <div class="fundo">
+                <h1>Marcio Santos</h1>
+                <div class="contato">
+                    <a href="https://www.linkedin.com/in/marcio-pereira-dos-santos-a76972220/"><i class="fa-brands fa-linkedin"></i> </a>  
+                    <a href="https://github.com/usernamemarcio"><i class="fab fa-github"></i></a>
+                </div>
+                <div class="calculadora">
+                    <h1>Calculadora</h1>
+                    <p id="resultado"></p>
+                    <table class="tabela">
+                        <tr>
+                            <td><button class="botao" onclick="clean('C')">C</button></td>
+                            <td><button class="botao" onclick="back()">DEL</button></td>
+                            <td><button class="botao botao-operacao" onclick="insert('/')">/</button></td>
+                            <td><button class="botao botao-operacao" onclick="insert('*')">X</button></td>
+                        </tr>
+                        <tr>
+                            <td><button class="botao" onclick="insert('7')">7</button></td>
+                            <td><button class="botao" onclick="insert('8')">8</button></td>
+                            <td><button class="botao" onclick="insert('9')">9</button></td>
+                            <td><button class="botao botao-operacao" onclick="insert('-')">-</button></td>
+                        </tr>
+                        <tr>
+                            <td><button class="botao" onclick="insert('4')">4</button></td>
+                            <td><button class="botao" onclick="insert('5')">5</button></td>
+                            <td><button class="botao" onclick="insert('6')">6</button></td>
+                            <td><button class="botao botao-operacao" onclick="insert('+')">+</button></td>
+                        </tr>
+                        <tr>
+                            <td><button class="botao" onclick="insert('1')">1</button></td>
+                            <td><button class="botao" onclick="insert('2')">2</button></td>
+                            <td><button class="botao" onclick="insert('3')">3</button></td>
+                            <td rowspan="2" onclick="calcular('=')"><button class="botao botao-igual">=</button></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><button id="botao-zero" class="botao-zero" onclick="insert('0')">0</button></td>
+                            <td><button class="botao" onclick="insert('.')">.</button></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <script src="https://kit.fontawesome.com/3fe52e6669.js" crossorigin="anonymous"></script>
+
+            <script>
+                function insert(num) {
+                    var numero = document.getElementById('resultado').innerHTML
+                    document.getElementById('resultado').innerHTML = numero + num
+                }
+
+                function clean() {
+                    document.getElementById('resultado').innerHTML = ''
+                }
+
+                function back() {
+                    var resultado = document.getElementById('resultado').innerHTML;
+                    document.getElementById('resultado').innerHTML = resultado.substring(0, resultado.length - 1)
+                }
+
+                function calcular() {
+                    var resultado = document.getElementById('resultado').innerHTML;
+                    if(resultado) {
+                        document.getElementById('resultado').innerHTML = eval(resultado)
+                    } else {
+                        document.getElementById('resultado').innerHTML = 'Vazio...'
+                    }
+                }
+            </script>
+    </body>
+</html>

@@ -1,0 +1,106 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.fundo {
+    background-image: linear-gradient(45deg, black, crimson);
+    height: 100vh;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+
+.contato {
+    font-size: 35px;
+    padding: 5px;
+    color: rgb(255, 255, 255);
+    margin-top: 10px;
+}
+
+.contato a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.calculadora {
+    position: absolute;
+    background-color: rgba(0, 0, 0, .8);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 15px;
+    padding: 15px;
+}
+
+.tabela button {
+    width: 50px;
+    height: 50px;
+    font-size: 25px;
+    cursor: pointer;
+    margin: 3px;
+    background-color: rgb(31, 31, 31);
+    border: none;
+    color: white;
+}
+
+/* .botao {
+    width: 50px;
+    height: 50px;
+    font-size: 25px;
+    cursor: pointer;
+    margin: 3px;
+    background-color: rgb(31, 31, 31);
+    border: none;
+    color: white;
+} */
+
+.tabela button:hover {
+    background-color: black;
+    color: white;
+}
+
+.tabela .botao-igual {
+    height: 106px;
+}
+
+.tabela .botao-zero {
+    width: 106px;
+}
+
+.tabela .botao-operacao {
+    background-color: #36F0BA;
+    color: black;
+}
+
+#resultado {
+    background-color: white;
+    width: 207px;
+    height: 30px;
+    margin: 5px;
+    font-size: 25px;
+    color: black;
+    text-align: right;
+    padding: 5px;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+/* barra de rolagem */
+::-webkit-scrollbar {
+    height: 4px;
+}
+
+/* trilha (barra de progresso) da barra de rolagem */
+::-webkit-scrollbar-track {
+    background-color: gray;
+}
+
+/* alça de rolagem arrastável */
+::-webkit-scrollbar-thumb {
+    background-color: crimson;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #36F0BA;
+}
